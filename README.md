@@ -1,0 +1,1 @@
+This repository is intended to contain the source code associated with the paper "From Counterfactuals to Trees: Competitive Analysis of Model Extraction Attacks", authored by Awa Khouna, Julien Ferry, and Thibaut Vidal. It will be updated very soon.
