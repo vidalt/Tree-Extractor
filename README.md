@@ -1,6 +1,6 @@
 # ModelExtractionAttack
 
-This repository contains the code for the paper "From Counterfactuals to Trees: Competitive Analysis of Model Extraction Attacks". 
+This repository contains the code for the paper "From Counterfactuals to Trees: Competitive Analysis of Model Extraction Attacks". Arxiv preprint available [here](https://arxiv.org/abs/2502.05325).
 
 ## OCEAN and Gurobi solver
 OCEAN is a library for generating counterfactual explanations. The library is available [here](https://github.com/vidalt/OCEAN). 
@@ -67,7 +67,7 @@ print(f"Fidelity: {fidelity*100:.2f}%")
 
 expected output:
 ```bash
-Nb iteration:  349
+Nb queries:  349
 Fidelity: 100.00%
 ```
 
@@ -87,7 +87,7 @@ Fidelity: 100.00%
 - `OCEAN/` contains a fork version of the OCEAN library.
 - `utils/` :
   -  `CounterFactualExp.py` contains an oracle class to generate counterfactuals using the OCEAN library.
-  -  `DiCEOracle.py` contains an oracle class to generate counterfactuals using the DiCE library.
+  -  `DiCEOracle.py` contains an oracle class to generate counterfactuals using the [DiCE](https://github.com/interpretml/DiCE) library.
   -  `ExtractedTree.py` contains the code to generate the decision trees from the extracted models.
   -  `NodeIdOracle.py` contains an oracle class to generate the node ids of the decision trees to use for the `PathFinding` attack.
 - `experiment.py` contains the code to run the decision trees experiments.
