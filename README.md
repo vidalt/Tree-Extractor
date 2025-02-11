@@ -1,4 +1,4 @@
-# ModelExtractionAttack
+# Tree-Extractor
 
 This repository contains the code for the paper "From Counterfactuals to Trees: Competitive Analysis of Model Extraction Attacks". Arxiv preprint available [here](https://arxiv.org/abs/2502.05325).
 
