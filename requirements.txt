@@ -1,0 +1,9 @@
+numpy==1.26.4
+matplotlib==3.8
+scikit-learn==1.1
+dice-ml==0.11
+gurobipy==10.0.3
+pandas==1.4.2
+requests
+pytest
+pyqt5
