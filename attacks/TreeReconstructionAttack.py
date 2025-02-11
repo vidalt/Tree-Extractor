@@ -341,13 +341,13 @@ class TRAttack:
         while len(self.QueryList) != 0 and self.niter < max_budget:
             self.__attack_with_querylist(max_budget)
             if self.niter % 1000 == 0:
-                print("Nb iterations: ", self.niter)
+                print("Nb queries: ", self.niter)
             if Compute_fidelity and self.niter % fidelity_each == 0:
                 self.fidelity_over_queries[self.niter] = self.compute_fidelity(
                     self.oracle.classifier, fidelity_data
                 )
 
-        print("Nb iteration: ", self.niter)
+        print("Nb queries: ", self.niter)
         return self.Tree
 
     def __attack_with_querylist(self, max_budget: int):
