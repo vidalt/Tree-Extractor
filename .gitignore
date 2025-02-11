@@ -1,0 +1,9 @@
+OCEAN/
+myenv/
+__pycache__
+.DS_Store
+rf.lp
+test.py
+experiment.sh
+experimentRF.sh
+experiments/**/ 
