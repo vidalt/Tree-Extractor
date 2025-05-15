@@ -89,36 +89,40 @@ Fidelity: 100.00%
   -  `CounterFactualExp.py` contains an oracle class to generate counterfactuals using the OCEAN library.
   -  `DiCEOracle.py` contains an oracle class to generate counterfactuals using the [DiCE](https://github.com/interpretml/DiCE) library.
   -  `ExtractedTree.py` contains the code to generate the decision trees from the extracted models.
+  -  `Heuristic.py` contains the code of the proposed heuristic in the paper (Algorithm 2 in Appendix C) to generate local counterfactual explanations.
   -  `NodeIdOracle.py` contains an oracle class to generate the node ids of the decision trees to use for the `PathFinding` attack.
-- `experiment.py` contains the code to run the decision trees experiments.
-- `experimentRF.py` contains the code to run the random forests experiments.
+- `experiment.py` contains the code to run the experiments.
 
 
 
 ## Reproducing the paper experiments
+All the experiments are run using the `experiment.py`script. The script takes the following arguments:
+- `--option`: the type of oracle to use. Can be `DT` for decision trees (with `OCEAN` and `DiCE` oracles), `RF` for random forests (with `OCEAN` and `DiCE` oracles), `DTH` for decision trees (with heuristic), or `RFH` for random forests (with heuristic).
+- `--experiment`: the number of the experiment to run described below. 
 ### Decision Trees experiments
 The experiments are labeled using the `--experiment` flag. 
 To run the decision trees experiments, run:
 ```bash
-$ python experiment.py --experiment=$EXPERIMENTNUMBER
+$ python experiment.py --option DT --experiment=$EXPERIMENTNUMBER
 ```
 where `$EXPERIMENTNUMBER` is the number of the experiment to run. The experiments are labeled as follows: `$EXPERIMENTNUMBER = DatasetIndex * 20 + AttackIndex * 5 + SeedIndex + 1`. For example, to run the experiment with the `seed=2` on the `COMPAS` dataset using the `TRA` attack, set `$EXPERIMENTNUMBER = 1 * 20 + 0 * 5 + 0 + 1= 21`.
 
 ```bash
-$ python experiment.py --experiment=21
+$ python experiment.py --option DT --experiment=21
 ```
-In total there are 5 (Datasets) * 4 (Attackers) * 5 (Seeds) = 100 experiments. The results of the experiments are saved directly in the `experiments/results/` folder.
+In total there are 5 (Datasets) * 4 (Attackers) * 5 (Seeds) = 100 experiments. The results of the experiments are saved directly in the `experiments/results/` folder. To reproduce the heuristic experiments, use `--option DTH`.
 
 ### Random Forests experiments
 To run the random forests experiments, run:
 ```bash
-$ python experimentRF.py --experiment=$EXPERIMENTNUMBER
+$ python experiment.py --option RF --experiment=$EXPERIMENTNUMBER
 ```
 where `$EXPERIMENTNUMBER` is the number of the experiment to run. The experiments are labeled same as for decision trees experiments but there is only one dataset. For example, to run the experiment with the `seed=31` on the `COMPAS` dataset using the `TRA` attack, set `$EXPERIMENTNUMBER = 0 * 3 + 1 + 1= 2`.
 
 ```bash
-$ python experimentRF.py --experiment=2
+$ python experiment.py --option RF --experiment=2
 ```
+In total there are 1 (Datasets) * 4 (Attackers) * 5 (Seeds) = 20 experiments. The results of the experiments are saved directly in the `experiments/RFs/` folder. To reproduce the heuristic experiments, use `--option RFH`.
 
 ### Plotting the results
 To plot the results of the decision trees experiments, run:
@@ -128,6 +132,10 @@ $ python experiments/exp_res.py
 To plot the results of the random forests experiments, run:
 ```bash
 $ python experiments/expRF_res.py
+```
+To plot the results of the heuristic experiments, run:
+```bash
+$ python experiments/expH_res.py
 ```
 
 

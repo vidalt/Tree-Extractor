@@ -1,7 +1,7 @@
 import copy
 import numpy as np
 from OCEAN.src.CounterFactualParameters import FeatureType
-from utils.CounterFactualExp import CounterFactualOracle
+from oracles.CounterFactualExp import CounterFactualOracle
 from utils.ExtractedTree import DecisionTree, Node
 from utils.space import space
 

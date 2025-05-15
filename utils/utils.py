@@ -358,10 +358,10 @@ def compute_fidelity_from_all_leaves(all_leaves, data, NodeOracle):
     return fidelity
 
 
-def write_results(data_dict, args, write_folder):
+def write_results(data_dict, args, folder):
     """Write results to a JSON file."""
     # File to save the results
-    EXP_FILE = f"{write_folder}/exp_{args.experiment}.json"
+    EXP_FILE = f"{folder}/exp_{args.experiment}.json"
     print("Writing results to", EXP_FILE)
     with open(EXP_FILE, "w") as json_file:
         json.dump(data_dict, json_file, indent=4)
