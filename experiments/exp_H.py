@@ -14,9 +14,9 @@ sys.path.insert(0, parent_dir)
 from parameters import DATASETS, SHORTNAMES  # noqa: E402
 
 # Dossier contenant les fichiers JSON
-exps_folder = "experiments_finale/results_H"
-exps_folder2 = "experiments_finale/results"
-plots_folder = "experiments_finale/plots/Heuristic"
+exps_folder = "experiments/results_H"
+exps_folder2 = "experiments/results"
+plots_folder = "experiments/plots/Heuristic"
 MARKERS = {
     "TRA_HEURISTIC": "*",
     "TRA_OCEAN": "p",
@@ -240,9 +240,7 @@ datasets = [
 ]
 choosed_attacker = ["TRA_HEURISTIC", "TRA_OCEAN"]
 df_h = read_experiments(exps_folder)
-print(len(df_h))
-df = read_experiments(exps_folder2, attacks=["TR"], datasets=datasets)
-print(len(df))
+df = read_experiments(exps_folder2, attacks=["TRA"], datasets=datasets)
 df_h["Attacker"] = df_h["Attacker"].replace({"TRA": "TRA_HEURISTIC"})
 df["Attacker"] = df["Attacker"].replace({"TRA": "TRA_OCEAN"})
 df = pd.concat([df_h, df], ignore_index=True)
