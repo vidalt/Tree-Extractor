@@ -91,7 +91,7 @@ MARKERS_RF = {
 }
 
 
-DATASET_RF = "datasets/COMPAS-ProPublica_processedMACE.csv"
+DATASET_RF = ["datasets/COMPAS-ProPublica_processedMACE.csv"]
 
 ATTACKS_RF = [
     "TRA",
