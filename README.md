@@ -77,6 +77,7 @@ Fidelity: 100.00%
   - `plots/` contains the plots generated in the experiments.
   - `results/` contains the results of the decision trees experiments in json format.
   - `RFs/` contains the random forests results in the experiments in json format.
+  - `expH_res.py` contains the code to generate the heuristic plots.
   - `exp_res.py` contains the code to generate the trees plots.
   - `expRF_res.py` contains the code to generate the random forests plots.
   - `parameters.py` contains the parameters used in the experiments.
